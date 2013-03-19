@@ -1,6 +1,9 @@
 from UserDict import UserDict
 from django.conf import settings
-from django.db.backends.mysql import base
+try:
+    from mysql_pymysql import base
+except:
+    from django.db.backends.mysql import base
 from django.core.exceptions import ImproperlyConfigured
 
 try:
